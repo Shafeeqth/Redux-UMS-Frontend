@@ -1,16 +1,20 @@
+import { ReactNode } from "react";
+
 type Props = {
   type: "button" | "submit" | "reset" | undefined;
-  label: string;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  children: ReactNode | string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  className: string;
 };
 
-const Button = ({ type = "button", label, onClick }: Props) => {
+const Button = ({ type = "button", className, children, onClick }: Props) => {
   return (
     <button
       type={type}
       onClick={ onClick}
+      className= {className}
     >
-        {label}
+        {children}
     </button>
   );
 };

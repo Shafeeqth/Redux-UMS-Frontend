@@ -1,14 +1,17 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from "react";
 
 type Props = {
-    onSubmit: (e:React.FormEvent<HTMLFormElement>) => void;
-    children: ReactNode
-}
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  children: ReactNode;
+  className: string;
+};
 
-const Form = ({onSubmit, children}: Props) => {
+const Form = ({ onSubmit, className, children }: Props) => {
   return (
-    <form onSubmit={onSubmit}>{children}</form>
-  )
-}
+    <form className={className} onSubmit={onSubmit}>
+      {children}
+    </form>
+  );
+};
 
-export default Form
+export default Form;
