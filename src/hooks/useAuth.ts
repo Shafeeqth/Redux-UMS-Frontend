@@ -11,7 +11,12 @@ const useAuth = () => {
     setError(null);
 
     try {
+      console.log(credential);
+   
+
       const response: AxiosResponse = await axios.post("/login", credential);
+      console.log(response);
+
       return response;
     } catch (err: any) {
       setError(err.response ? err.response.data.message : "Login failed");
@@ -25,7 +30,9 @@ const useAuth = () => {
     setLoading(true);
     setError(null);
     try {
+        
       const response = axios.post("/signup", signupCredential);
+      
       return response;
     } catch (err: any) {
       setError(err.response ? err.response.data.message : "Signup failed");

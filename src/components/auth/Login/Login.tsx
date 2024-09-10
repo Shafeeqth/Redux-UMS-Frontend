@@ -1,18 +1,19 @@
 import { useCallback, useState } from "react";
-import { LoginCredential } from "@types/login";
+import { ILoginCredential } from "@types/auth";
 import useAuth from "@hooks/useAuth";
 import LoginForm from "@components/loginForm/LoginForm";
 import useDebounce from "@hooks/useDebounce";
 
 const Login = () => {
-  const [credentials, setCredentials] = useState<LoginCredential>({
+  const [credentials, setCredentials] = useState<ILoginCredential>({
     password: "",
     email: "",
   });
   const { error, isLoading, login } = useAuth();
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    
+    setCredentials((credentials) => ({ ...credentials, [e.target.name]: e.target.value }));
   },[]);
 
   const debounceCredentials = {
@@ -37,3 +38,5 @@ const Login = () => {
     />
   );
 };
+
+export default Login;

@@ -6,6 +6,7 @@ type Props = {
   className: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
+
 };
 
 const Input = ({
@@ -16,9 +17,11 @@ const Input = ({
   value,
   onChange,
   required,
+
 }: Props) => {
   return (
     <input
+      
       type={type}
       name={name}
       placeholder={placeholder}

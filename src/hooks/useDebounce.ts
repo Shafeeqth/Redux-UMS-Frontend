@@ -6,6 +6,7 @@ const useDebounce = (value : string, delay: number) : string => {
     useEffect(() => {
         const handler = setTimeout(()=> {
             setDebounceValue(value);
+            
         },delay)
 
         return () => {

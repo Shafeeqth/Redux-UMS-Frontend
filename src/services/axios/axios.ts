@@ -4,8 +4,9 @@ import axios, {
   RawAxiosRequestHeaders,
 } from "axios";
 
+
 export const instance = axios.create({
-  baseURL: import.meta.env.BASE_URL,
+  baseURL: "http://localhost:3000",//import.meta.env.BASE_URL,
   headers: {
     "Content-Type": "application/json"
   },

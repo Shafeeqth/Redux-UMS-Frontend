@@ -1,13 +1,11 @@
 import React, { ReactNode } from 'react'
 interface FormGroupProps {
-    label: ReactNode;
-    input: ReactNode;
+    children: ReactNode[];
 }
-const FormGroup = ({label, input}: FormGroupProps) => {
+const FormGroup = ({children}: FormGroupProps) => {
   return (
     <div>
-        {label}
-        {input}
+        {children}
     </div>
   )
 }
