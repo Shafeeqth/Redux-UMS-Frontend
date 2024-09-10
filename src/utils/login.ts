@@ -1,31 +1,25 @@
 import { useState } from "react";
-
-type Credential = {
-    email : string;
-    password: string
-}
+import { LoginCredential } from "../@types/loginCredentials";
 
 const Login = () => {
-    const [credentials, setCredentials] = useState<Credential>({password: '', email: ''});
-    
+  const [credentials, setCredentials] = useState<LoginCredential>({
+    password: "",
+    email: "",
+  });
 
-    const handleChange = (e:React.ChangeEvent<HTMLInputElement> ) => {
-        setCredentials({...credentials, [e.target.name]: e.target.value})
-    }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
 
-    const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-        try {
-            
-        } catch (error) {
-            
-        }
-    }
+    try {
+    } catch (error) {}
+  };
 
-    return {
-        handleChange,
-        handleSubmit
-    }
-
-}
+  return {
+    handleChange,
+    handleSubmit,
+  };
+};

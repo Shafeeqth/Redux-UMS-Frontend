@@ -4,6 +4,17 @@
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "rootDir": "./",                                  /* Specify the root folder within your source files. */
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@services/*": ["services/*"],
+      "@hooks/*": ["hooks/*"],
+      "@validations/*": ["validatoins/*"],
+      "@pages/*": ["pages/*"],
+      "@types": ["@types"]
+    
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
